@@ -26,32 +26,32 @@ class Animal
         virtual void deplace(int maxX, int maxY) = 0;
 };
 
-class Lion 
+class Ours : public Animal
 {
     public :
-        void attaque();
+        void Setattaque();
         void deplace(int maxX, int maxY);
 };
 
 
-class Ours 
+class Lion : public Animal
 {
     public :
-        void attaque();
+        void Setattaque();
         void deplace(int maxX, int maxY);
 };
 
-class Pierre 
+class Pierre : public Animal
 {
     public :
-        void attaque();
+        void Setattaque();
         void deplace(int maxX, int maxY);
 };
 
-class Loup 
+class Loup : public Animal
 {
     public :
-        void attaque();
+        void Setattaque();
         void deplace(int maxX, int maxY);
 };
 

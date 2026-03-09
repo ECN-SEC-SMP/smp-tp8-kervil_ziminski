@@ -16,6 +16,7 @@ Animal :: Animal(int maxX, int maxY, int a, int b)
     x = a % maxX;
     y = b % maxY;
     vivant = true;
+    
 }
 
 const string Animal :: getNom()
@@ -47,56 +48,53 @@ void Animal :: setVivant(bool v)
 {
     vivant = v;
 }
-class Animal
+
+bool Animal :: attaque(Animal &a)
+{ 
+    if (typeAttaque.resoudreAttaque(a.getAttaque()))
+    {
+        a.setVivant(false);
+        return true;
+    }
+    else
+    {
+        vivant = false;
+        return false;
+    }
+}
+
+void Animal :: setAttaque(Attaque atq)
 {
-    protected:
-        string nom; 
-        int x; 
-        int y; 
-        bool vivant; 
-        Attaque typeAttaque;
-    private:
+    typeAttaque = atq;
+}
 
-    public:
-        Animal(int maxX, int maxY);
-        Animal(int maxX, int maxY, int a, int b);
-        const string getNom();
-        const int getX();
-        const int getY();
-        const bool getVivant(); 
-        const Attaque getAttaque();
-        void setVivant(bool v);
-        bool attaque(Animal &a);
-        virtual void setAttaque(Attaque atq) = 0;
-        virtual void deplace(int maxX, int maxY) = 0;
-};
-
-class Lion 
+void Animal :: deplace(int maxX, int maxY)
 {
-    public :
-        void attaque();
-        void deplace(int maxX, int maxY);
-};
+    
+    int dx = rand() % 3 - 1; // -1, 0 ou 1
+    int dy = rand() % 3 - 1; // -1, 0 ou 1
+    x = (x + dx + maxX) % maxX; // Assure que x reste dans les limites
+    y = (y + dy + maxY) % maxY; // Assure que y reste dans les limites
+}
 
 
-class Ours 
+void Pierre :: Setattaque()
 {
-    public :
-        void attaque();
-        void deplace(int maxX, int maxY);
-};
-
-class Pierre 
+    // Exemple : la Pierre utilise l'attaque "Pierre"
+    this->typeAttaque = Attaque(0);
+}
+void Loup :: Setattaque()
 {
-    public :
-        void attaque();
-        void deplace(int maxX, int maxY);
-};
+    this->typeAttaque = Attaque(3); // Exemple : le Loup utilise l'attaque "Ciseaux"
+}
 
-class Loup 
+
+void Pierre :: deplace(int maxX, int maxY)
 {
-    public :
-        void attaque();
-        void deplace(int maxX, int maxY);
-};
+    Animal :: deplace(maxX, maxY); // Utilise le déplacement générique défini dans la classe Animal
+}
 
+void Loup :: deplace(int maxX, int maxY)
+{
+    Animal :: deplace(maxX, maxY); // Utilise le déplacement générique défini dans la classe Animal
+}
