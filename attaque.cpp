@@ -14,7 +14,7 @@ const int Attaque::getTypeAttaque(){
     return this->type;
 }
 
-const bool Attaque::resoudreAttaque(Attaque &a){
+const bool Attaque::resoudreAttaque(const Attaque &a){
     switch(this->type){
         case 0:
             switch (a.type)
