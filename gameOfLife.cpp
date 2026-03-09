@@ -49,18 +49,9 @@ void Animal :: setVivant(bool v)
     vivant = v;
 }
 
-bool Animal :: attaque(Animal &a)
+bool Animal :: attaque(Animal &a) const
 { 
-    if (typeAttaque.resoudreAttaque(a.getAttaque()))
-    {
-        a.setVivant(false);
-        return true;
-    }
-    else
-    {
-        vivant = false;
-        return false;
-    }
+    return this->typeAttaque.resoudreAttaque(a);
 }
 
 void Animal :: setAttaque(Attaque atq)

@@ -21,7 +21,7 @@ class Animal
         const bool getVivant(); 
         const Attaque getAttaque();
         void setVivant(bool v);
-        bool attaque(Animal &a);
+        bool attaque(Animal &a) const;
         virtual void setAttaque(Attaque atq) = 0;
         virtual void deplace(int maxX, int maxY) = 0;
 };
