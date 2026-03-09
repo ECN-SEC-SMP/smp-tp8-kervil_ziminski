@@ -1,4 +1,5 @@
 #include <string>
+
 using namespace std;
 
 class Attaque
@@ -38,3 +39,31 @@ class Animal
         virtual void deplace(int maxX, int maxY) = 0;
 };
 
+class Lion 
+{
+    public :
+        void attaque();
+        void deplace(int maxX, int maxY);
+};
+
+
+class Ours 
+{
+    public :
+        void attaque();
+        void deplace(int maxX, int maxY);
+};
+
+class Pierre 
+{
+    public :
+        void attaque();
+        void deplace(int maxX, int maxY);
+};
+
+class Loup 
+{
+    public :
+        void attaque();
+        void deplace(int maxX, int maxY);
+};
