@@ -49,9 +49,9 @@ void Animal :: setVivant(bool v)
     vivant = v;
 }
 
-bool Animal :: attaque(Animal &a) const
+bool Animal :: attaque(Animal &a)
 { 
-    return this->typeAttaque.resoudreAttaque(a);
+    return this->typeAttaque.resoudreAttaque(a.getAttaque());
 }
 
 void Animal :: setAttaque(Attaque atq)

@@ -1,3 +1,4 @@
+#pragma once
 #include <string>
 #include <cstdlib>
 #include <ctime>
@@ -23,7 +24,7 @@ class Animal
         const bool getVivant(); 
         const Attaque getAttaque();
         void setVivant(bool v);
-        bool attaque(Animal &a) const;
+        bool attaque(Animal &a);
         virtual void setAttaque(Attaque atq) = 0;
         virtual void deplace(int maxX, int maxY) = 0;
 };
