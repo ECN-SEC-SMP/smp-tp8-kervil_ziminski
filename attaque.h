@@ -12,6 +12,6 @@ public:
     ~Attaque();
     Attaque(int a);
     const int getTypeAttaque();
-    const bool resoudreAttaque(const Attaque &a);
+    bool resoudreAttaque(const Attaque &a) const;
     const string getNomAttaque();
 };

@@ -3,6 +3,7 @@
 #include <cstdlib>
 #include <ctime>
 using namespace std;
+
 #include "attaque.h"
 
 class Animal
@@ -28,33 +29,3 @@ class Animal
         virtual void setAttaque(Attaque atq) = 0;
         virtual void deplace(int maxX, int maxY) = 0;
 };
-
-class Ours : public Animal
-{
-    public :
-        void Setattaque();
-        void deplace(int maxX, int maxY);
-};
-
-
-class Lion : public Animal
-{
-    public :
-        void Setattaque();
-        void deplace(int maxX, int maxY);
-};
-
-class Pierre : public Animal
-{
-    public :
-        void Setattaque();
-        void deplace(int maxX, int maxY);
-};
-
-class Loup : public Animal
-{
-    public :
-        void Setattaque();
-        void deplace(int maxX, int maxY);
-};
-
