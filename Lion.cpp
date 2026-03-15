@@ -1,9 +1,22 @@
 #include "Lion.h"
 
-Lion::Lion(int maxX, int maxY) : Animal(maxX, maxY) {} 
+Lion::Lion(int maxX, int maxY) : Animal(maxX, maxY) {
+    this->nom = "L";
+}
+
+Lion::Lion(int maxX, int maxY, int a, int b) : Animal(maxX, maxY, a, b) {
+    this->nom = "L";
+}
+
 
 
 void Lion :: setAttaque(Attaque atq)
+{
+    this->typeAttaque = atq;
+}
+
+
+void Lion :: setAttaque()
 {
     srand(time(NULL));
     int choix = rand() % 2;

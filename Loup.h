@@ -3,6 +3,12 @@
 class Loup : public Animal
 {
     public :
-        void Setattaque();
+        Loup(int maxX, int maxY);
+        Loup(int maxX, int maxY, int a, int b);
+
+
+        void setAttaque(Attaque atq);
+        void setAttaque();
+
         void deplace(int maxX, int maxY);
 };

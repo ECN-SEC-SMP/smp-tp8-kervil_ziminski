@@ -1,9 +1,23 @@
 #include "Ours.h"
 
 
-void Ours :: Setattaque()
+Ours::Ours(int maxX, int maxY) : Animal(maxX, maxY) {
+    this->nom = "O";
+}
+
+Ours::Ours(int maxX, int maxY, int a, int b) : Animal(maxX, maxY, a, b) {
+    this->nom = "O";
+}
+
+void Ours :: setAttaque()
 {
-    this->typeAttaque = Attaque(1); // Exemple : le Loup utilise l'attaque "Ciseaux"
+    this->typeAttaque = Attaque(1);
+}
+
+
+void Ours :: setAttaque(Attaque atq)
+{
+    this->typeAttaque = atq; 
 }
 
 void Ours :: deplace(int maxX, int maxY)
