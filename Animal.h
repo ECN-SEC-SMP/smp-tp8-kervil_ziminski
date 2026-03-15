@@ -27,5 +27,7 @@ class Animal
         void setVivant(bool v);
         bool attaque(Animal &a);
         virtual void setAttaque(Attaque atq) = 0;
+        virtual void setAttaque() = 0;
+
         virtual void deplace(int maxX, int maxY) = 0;
 };

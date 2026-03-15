@@ -6,6 +6,10 @@ Attaque::Attaque(){
     this->type = rand()%3;
 }
 
+Attaque::~Attaque(){
+    // Destructeur vide
+}
+
 Attaque::Attaque(int a){
     this->type = a % 3; 
 }
@@ -30,6 +34,8 @@ bool Attaque::resoudreAttaque(const Attaque &a) const{
             case 2:
                 return true;
                 break;
+            default:
+                return false;
             }
         break;
         case 1:
@@ -44,6 +50,8 @@ bool Attaque::resoudreAttaque(const Attaque &a) const{
             case 2:
                 return false;
                 break;
+            default:
+                return false;
             }
         break;
         case 2: 
@@ -58,8 +66,12 @@ bool Attaque::resoudreAttaque(const Attaque &a) const{
             case 2:
                 return false;
                 break;
+            default:
+                return false;
             }   
         break;
+        default:
+            return false;
     }
 }
 
@@ -75,5 +87,7 @@ const string Attaque::getNomAttaque(){
     case 2: 
         return "Ciseaux";
         break;
+    default:
+        return "Inconnu";
     }
 }
