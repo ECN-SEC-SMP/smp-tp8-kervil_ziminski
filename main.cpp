@@ -11,6 +11,14 @@
 
 using namespace std;
 
+/**
+ * @brief Vérifie si la partie est terminée.
+ *
+ * La partie est terminée si seuls les animaux immobiles (Pierres) sont encore vivants.
+ *
+ * @param tab Le tableau des animaux.
+ * @return true si la partie est finie, false sinon.
+ */
 bool isFinsih(const vector<unique_ptr<Animal>>& tab){
     for(size_t i = 0; i < tab.size(); i++){
         // On vérifie que l'animal peut toujours bouger
@@ -21,6 +29,14 @@ bool isFinsih(const vector<unique_ptr<Animal>>& tab){
     return true;
 }
 
+/**
+ * @brief Retourne la représentation d'une case de la grille.
+ *
+ * @param tab Le tableau des animaux.
+ * @param a Coordonnée x de la case.
+ * @param b Coordonnée y de la case.
+ * @return Le nom de l'animal vivant sur la case, ou une chaîne vide sinon.
+ */
 string getValueTab(const vector<unique_ptr<Animal>>& tab, int a, int b){
     for(size_t i = 0 ; i < tab.size() ; i++){
         if(tab[i]->getX() == a && tab[i]->getY() == b && tab[i]->getVivant()){
@@ -30,6 +46,13 @@ string getValueTab(const vector<unique_ptr<Animal>>& tab, int a, int b){
     return "    ";
 }
 
+/**
+ * @brief Affiche la grille du jeu.
+ *
+ * @param tab Le tableau des animaux.
+ * @param maxX Largeur de la grille.
+ * @param maxY Hauteur de la grille.
+ */
 void afficheTableau(const vector<unique_ptr<Animal>>& tab, int maxX, int maxY){
     for(int i = 0; i < maxX ; i++){
     
@@ -48,6 +71,13 @@ void afficheTableau(const vector<unique_ptr<Animal>>& tab, int maxX, int maxY){
 }
 
 
+/**
+ * @brief Fonction principale du programme.
+ *
+ * Initialise la grille, crée les animaux, et lance la boucle de jeu jusqu'à ce que seuls les animaux immobiles soient vivants.
+ *
+ * @return Code de sortie du programme.
+ */
 int main(void){
     int maxX = 10; 
     int maxY = 10; 
