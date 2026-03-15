@@ -21,3 +21,6 @@ main
 *.nls
 *.dvi
 *.ps
+
+# Minted generated files
+_minted-*/
